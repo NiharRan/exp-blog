@@ -45,6 +45,8 @@ var postController = require('../controllers/PostController');
 router.get('/posts', postController.index);
 router.get('/posts/create', postController.create);
 router.post('/posts', upload.single('image'), postController.validate('create'), postController.store);
+router.get('/posts/:postId/edit', postController.edit);
+router.post('/posts/:postId', upload.single('image'), postController.validate('edit'), postController.update);
 
 // router.post('/insert', function (req, res, next) {
 //   var item = {

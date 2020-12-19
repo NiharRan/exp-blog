@@ -6,6 +6,7 @@
     {{/if}}
     {{#each posts }}
     <div class="post">
+        <a href="/posts/{{ this.post_id }}/edit" class="btn btn-info mb-2">Edit</a>
         <div class="post-image">
             <img src="/posts/responsive/lg/{{ this.image }}" alt="">
         </div>
