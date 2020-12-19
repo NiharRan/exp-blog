@@ -1,0 +1,18 @@
+<div class="post-wrapper">
+    {{#if success }}
+    <div class="alert alert-success">
+        {{ success }}
+    </div>
+    {{/if}}
+    {{#each posts }}
+    <div class="post">
+        <div class="post-image">
+            <img src="/posts/responsive/lg/{{ this.image }}" alt="">
+        </div>
+        <div class="post-content">
+            <h1>{{ this.title }}</h1>
+            <p>{{ this.content }}</p>
+        </div>
+    </div>
+    {{/each}}
+</div>
