@@ -5,9 +5,10 @@ var logger = require("morgan");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 var hbs = require("express-handlebars");
-require('dotenv').config();
+require("dotenv").config();
 
 var expressSession = require("express-session");
+var MySQLStore = require("express-mysql-session")(expressSession);
 
 var routes = require("./routes/index");
 
@@ -38,6 +39,13 @@ app.use(
     secret: "max",
     saveUninitialized: false,
     resave: false,
+    store: new MySQLStore({
+      host: "localhost",
+      port: 3306,
+      user: "root",
+      password: "",
+      database: "demo",
+    }),
   })
 );
 
